@@ -1,7 +1,6 @@
-# Raspberry Pi and -- Sensor
+# Raspberry Pi and BH1750 Light Intensity Sensor
 
-<!-- #TODO add sensor and circuit diagrams -->
-Code for getting started with ... sensor using a Raspberry Pi.
+Code for getting started with a BH1750 light insensity sensor and a Raspberry Pi.
 
 <br />
 
@@ -10,7 +9,9 @@ Code for getting started with ... sensor using a Raspberry Pi.
 | File/Folder | Description |
 |--- | --- |
 | [python/](python/) | folder for python scripts. |
-| [python/requirements.txt](python/requirements.txt) | Requirements file for python dependancy libraries. |
+| [python/bh1750/](python/bh1750/) | Python module for sensor |
+| [python/BH1750DirectReadings.py](python/BH1750DirectReadings.py) | Python script that reads data directly from sensor. |
+| [python/BH1750Simple.py](python/BH1750Simple.py) | Python script that reads data from sensor using a module. |
 | [config.sh](config.sh) | Bash script to automatically configure and setup the Raspberry Pi for using the ... sensor. |
 |  |  |
 
@@ -20,17 +21,17 @@ Code for getting started with ... sensor using a Raspberry Pi.
 
 Wire the components as shown in the diagram.
 
-![circuit diagram](assets/rpi-starter-circuit-diagram_schem.svg)
+![circuit diagram](assets/rpi-bh1750-sensor-circuit-diagram_schem.png)
 
 #### Components Needed
 
-* 
+* bh1750 breakout board
 * connecting wires
 * raspberry pi
 
 <br />
 
-![breadboard diagram](assets/rpi-starter-circuit-diagram_bb.svg)
+![breadboard diagram](assets/rpi-bh1750-sensor-circuit-diagram_bb.svg)
 
 <br />
 
@@ -40,8 +41,9 @@ Wire the components as shown in the diagram.
 | --- | --- | --- | --- |
 |  |  |  |  |
 | 1 | +3.3V |  | Vdd |
+| 3 | GPIO 2 / SDA |  | SDA |
+| 5 | GPIO 3 / SCL |  | SCL |
 | 6 | GND |  | GND |
-|  |  |  |  |
 
 ![pin diagram](assets/rp2_pinout.png)
 
@@ -87,20 +89,10 @@ The default address for the sensor is 0x23. The other address is 0x5C using the 
 
 ### Python Dependancies
 
-The python script requires the PyPi ... library from https://pypi.org/project/.../. This library can be installed from PyPI by executing:
-
-```bash
-sudo pip install ...
-```
-
-A requirements.txt file is also provided and can be used instead.
-```bash
-cd ./python
-sudo pip install -r requirements.txt
-```
-
-<br />
+No additional python dependancies needed.
 
 ## References
 
-- 
+- https://www.raspberrypi-spy.co.uk/2015/03/bh1750fvi-i2c-digital-light-intensity-sensor/
+- http://www.pibits.net/code/raspberry-pi-bh1750-light-sensor.php
+- https://gist.github.com/oskar456/95c66d564c58361ecf9f

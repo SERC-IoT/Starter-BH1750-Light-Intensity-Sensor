@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='3.43798in' height='4.70511in' viewBox='0 0 247.535 338.768' >
-<g partID='854391890'><g transform="matrix(1, 0, 0, 1, 0.199995, 1.63829e-06)">
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='3.43798in' height='4.77528in' viewBox='0 0 247.535 343.82' >
+<g partID='854391890'><g transform='translate(0,5.05241)' ><g transform="matrix(1, 0, 0, 1, 0.199995, 1.63829e-06)">
  <g  id="breadboardbreadboard">
   <rect  y="-0.00038177" height="151.2" x="2.22043e-17" fill="#d9d9d9" id="rect5" width="233.726"/>
   <rect  y="20.9316" height="0.4" x="-0.199995" fill="#b3b0b0" id="rect8" width="228.753"/>
@@ -2914,7 +2914,7 @@
   </g>
  </g>
 </g>
-</g><g partID='854379750'><g transform='translate(1.56672,174.428)' ><g transform="matrix(1, 0, 0, 1, -1.9627, 0.415188)">
+</g></g><g partID='854379750'><g transform='translate(1.56672,179.481)' ><g transform="matrix(1, 0, 0, 1, -1.9627, 0.415188)">
  <g  id="breadboardbreadboard">
   <g  gorn="0.3.0.0">
    <g transform="matrix(1, 0, 0, 1, 2, 0)">
@@ -4530,4 +4530,37 @@
   </g>
  </g>
 </g>
-</g></g><g partID='854387410'><path stroke-linecap='round' fill='none' stroke-width='3.2' stroke='#8c0000' d='M82.9196,108C60.9923,136.067, 29.5122,145.069 25.319,187.199' /><path stroke-linecap='round' fill='none' stroke-width='1.6' stroke='#cc1414' d='M82.9196,108C60.9923,136.067, 29.5122,145.069 25.319,187.199' /></g><g partID='854387550'><path stroke-linecap='round' fill='none' stroke-width='3.2' stroke='#d6d63a' d='M97.3195,108C79.5503,154.113, 101.464,140.889 39.719,187.199' /><path stroke-linecap='round' fill='none' stroke-width='1.6' stroke='#fff800' d='M97.3195,108C79.5503,154.113, 101.464,140.889 39.719,187.199' /></g><g partID='854387620'><path stroke-linecap='round' fill='none' stroke-width='3.2' stroke='#000000' d='M90.1195,108C79.5215,134.108, 47.5097,150.668 39.719,180' /><path stroke-linecap='round' fill='none' stroke-width='1.6' stroke='#404040' d='M90.1195,108C79.5215,134.108, 47.5097,150.668 39.719,180' /></g><g partID='854387480'><path stroke-linecap='round' fill='none' stroke-width='3.2' stroke='#1b5bb3' d='M104.519,108C93.5512,138.041, 103.845,132.194 32.519,187.199' /><path stroke-linecap='round' fill='none' stroke-width='1.6' stroke='#418dd9' d='M104.519,108C93.5512,138.041, 103.845,132.194 32.519,187.199' /></g></svg>
+</g></g><g partID='854387410'><path stroke-linecap='round' fill='none' stroke-width='3.2' stroke='#8c0000' d='M68.5197,69.852C46.5924,97.9196, 15.1123,106.921 25.319,192.251' /><path stroke-linecap='round' fill='none' stroke-width='1.6' stroke='#cc1414' d='M68.5197,69.852C46.5924,97.9196, 15.1123,106.921 25.319,192.251' /></g><g partID='854477720'><g transform='translate(73.402,0)' ><g transform='matrix(0,1,-1,0,0,0)'  ><g transform="matrix(1, 0, 0, 1, 27.638, 13.749)">
+ <g  id="breadboard">
+  <g  gorn="0.1.0.0.0.1">
+   <g  id="icon" gorn="0.1.0.0.0.1.0">
+    <path  fill="#006A99" d="M-27.638,25.816l60.312,0l0,-39.565l-60.312,0L-27.638,25.816M26.331,5.522c0,-0.796,0.645,-1.44,1.439,-1.44c0.797,0,1.441,0.645,1.441,1.44s-0.645,1.441,-1.441,1.441C26.976,6.963,26.331,6.318,26.331,5.522zM26.331,-1.678c0,-0.795,0.645,-1.44,1.439,-1.44c0.797,0,1.441,0.645,1.441,1.44l0,0c0,0.795,-0.645,1.439,-1.441,1.439C26.976,-0.239,26.331,-0.883,26.331,-1.678zM26.331,-8.878c0,-0.795,0.645,-1.44,1.439,-1.44c0.797,0,1.441,0.645,1.441,1.44c0,0.795,-0.645,1.44,-1.441,1.44C26.976,-7.438,26.331,-8.083,26.331,-8.878zM26.415,19.872c0,-0.795,0.645,-1.439,1.439,-1.439s1.439,0.645,1.439,1.439c0,0.797,-0.645,1.441,-1.439,1.441S26.415,20.668,26.415,19.872zM26.415,12.67c0,-0.795,0.645,-1.439,1.439,-1.439s1.439,0.645,1.439,1.439l0,0c0,0.795,-0.645,1.439,-1.439,1.439S26.415,13.465,26.415,12.67zM-26.093,-7.731c0,-2.52,2.043,-4.562,4.562,-4.562c2.521,0,4.564,2.043,4.564,4.562c0,2.526,-2.043,4.568,-4.564,4.568C-24.05,-3.163,-26.093,-5.205,-26.093,-7.731zM-26.446,19.88c0,-2.52,2.043,-4.562,4.563,-4.562c2.521,0,4.564,2.043,4.564,4.562c0,2.525,-2.043,4.568,-4.564,4.568C-24.403,24.449,-26.446,22.406,-26.446,19.88z"/>
+    <rect  y="-6.748" height="4.676" x="14.02" fill="#333333" width="9.602"/>
+    <circle  stroke="#9A916C" r="2.052" fill="none" cy="-8.8" stroke-width="1.224" id="connector8pin" cx="27.814" gorn="0.1.0.0.0.1.0.2"/>
+    <circle  stroke="#9A916C" r="2.052" fill="none" cy="-1.666" stroke-width="1.224" id="connector9pin" cx="27.814" gorn="0.1.0.0.0.1.0.3"/>
+    <circle  stroke="#9A916C" r="2.052" fill="none" cy="5.487" stroke-width="1.224" id="connector10pin" cx="27.814" gorn="0.1.0.0.0.1.0.4"/>
+    <circle  stroke="#9A916C" r="2.052" fill="none" cy="12.683" stroke-width="1.224" id="connector12pin" cx="27.814" gorn="0.1.0.0.0.1.0.5"/>
+    <circle  stroke="#9A916C" r="2.052" fill="none" cy="19.884" stroke-width="1.224" id="connector13pin" cx="27.814" gorn="0.1.0.0.0.1.0.6"/>
+    <rect  y="19.884" height="2.886" fill-opacity="0.15" x="14.967" fill="#FFFFFF" width="7.708"/>
+    <rect  y="14.947" height="2.886" fill-opacity="0.15" x="14.967" fill="#FFFFFF" width="7.708"/>
+    <rect  y="10.232" height="2.886" fill-opacity="0.15" x="14.967" fill="#FFFFFF" width="7.708"/>
+    <rect  y="5.487" height="2.886" fill-opacity="0.15" x="14.967" fill="#FFFFFF" width="7.708"/>
+    <rect  y="0.549" height="2.886" fill-opacity="0.15" x="14.967" fill="#FFFFFF" width="7.708"/>
+    <rect  y="-11.686" height="2.886" fill-opacity="0.15" x="14.967" fill="#FFFFFF" width="7.708"/>
+    <rect  y="-1.315" height="14.698" x="-7.934" fill="#333333" width="9.734"/>
+    <rect  y="7.55" height="2.885" fill-opacity="0.15" x="-21.199" fill="#FFFFFF" width="7.708"/>
+    <rect  y="2.612" height="2.886" fill-opacity="0.15" x="-21.199" fill="#FFFFFF" width="7.708"/>
+    <g transform="matrix(1.19249e-08, -1, 1, 1.19249e-08, 8.3938, 15.9351)">
+     <g >
+      <g >
+       <g >
+        <text  font-size="5.9438" font-family="Droid Sans" fill="#FFFFFF">BH1750</text>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</g>
+</g></g></g><g partID='854387620'><path stroke-linecap='round' fill='none' stroke-width='3.2' stroke='#000000' d='M61.3197,69.852C50.7216,95.9607, 18.7098,112.52 39.719,185.052' /><path stroke-linecap='round' fill='none' stroke-width='1.6' stroke='#404040' d='M61.3197,69.852C50.7216,95.9607, 18.7098,112.52 39.719,185.052' /></g><g partID='854387480'><path stroke-linecap='round' fill='none' stroke-width='3.2' stroke='#1b5bb3' d='M46.9198,69.852C35.9515,99.893, 46.2454,94.0465 32.519,192.251' /><path stroke-linecap='round' fill='none' stroke-width='1.6' stroke='#418dd9' d='M46.9198,69.852C35.9515,99.893, 46.2454,94.0465 32.519,192.251' /></g><g partID='854387550'><path stroke-linecap='round' fill='none' stroke-width='3.2' stroke='#d6d63a' d='M54.1197,69.852C36.3505,115.966, 58.2639,102.741 39.719,192.251' /><path stroke-linecap='round' fill='none' stroke-width='1.6' stroke='#fff800' d='M54.1197,69.852C36.3505,115.966, 58.2639,102.741 39.719,192.251' /></g></svg>
