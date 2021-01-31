@@ -1,7 +1,6 @@
-# ESP8266 and -- -- Sensor
+# ESP8266 and BH1750 Light Intensity Sensor
 
-<!-- #TODO add sensor and circuit diagrams -->
-Code for getting started with -- -- sensor and an ESP8266 development board.
+Code for getting started with a BH1750 light insensity sensor and a ESP8266 microcontroller.
 
 <br />
 
@@ -23,17 +22,17 @@ Setup instructions for a WeMos D1 mini are below. For ESP32 based setup instruct
 
 Wire the components as shown in the diagram.
 
-![circuit diagram](assets/esp8266-starter-circuit-diagram_schem.svg)
+![circuit diagram](assets/esp8266-bh1750-lux-sensor-circuit-diagram_schem.svg)
 
 #### Components Needed
 
-* 
+* BH1750 sensor
 * connecting wires
 * esp8266 device
 
 <br />
 
-![breadboard diagram](assets/esp8266-starter-circuit-diagram_bb.svg)
+![breadboard diagram](assets/esp8266-bh1750-lux-sensor-circuit-diagram_bb.png)
 
 <br />
 
@@ -44,6 +43,8 @@ Wire the components as shown in the diagram.
 |  |  |  |  |
 | 1 | +3.3V |  | Vdd |
 | 6 | GND |  | GND |
+| D2 | GPIO4 |  | SDA |
+| D1 | GPIO5 |  | SCL |
 |  |  |  |  |
 
 ![pin diagram](assets/wemos-d1-mini-pinout.png)
@@ -63,11 +64,11 @@ The arduino sketches require the -- -- libraries. They are included in the root 
 
 ## MicroPython
 
-<!-- #TODO add library info -->
-MicroPython already has drivers for -- devices baked in.
+The MicroPython script uses a module from https://github.com/PinkInk/upylib/tree/master/bh1750. It is included in the [micropython/lib](micropython/lib) folder.
 
 <br />
 
 ## References
 
 - https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
+- https://github.com/PinkInk/upylib/tree/master/bh1750
