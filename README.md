@@ -4,9 +4,9 @@ Code for getting started with a BH1750 light intensity (lux) sensor.
 
 ![sensor](assets/BH1750.png)
 
-The BH1750 is a digital light intensity sensor. Light levels are converted and output as a 16-bit lux value.
+The BH1750 is a digital ambient light sensor that uses the I2C bus. The IC has a built in 16-bit AD converter and is pre-calibrated. Data is directly output in Lux (Lx) without additional calculations needed (other than to divide by 1.2).
 
-The sensor uses the I2C bus. The default address for the sensor is 0x23, which can be changed to 0x5C by pulling an ADDR pin high.
+The default I2C address for the sensor is 0x23. The other address is 0x5C using the address pin.
 
 <br />
 
@@ -44,3 +44,5 @@ Setup instructions and starter code for different development boards
 <br />
 
 ## References
+
+- fritzing part from https://github.com/vdemay/fritzing-parts
