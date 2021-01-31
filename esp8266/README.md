@@ -10,6 +10,7 @@ Code for getting started with a BH1750 light insensity sensor and a ESP8266 micr
 |--- | --- |
 | [arduino/](arduino/) | folder for arduino sketches. // For Arduino, use the sketches in the Arduino Uno folder [../arduino-uno/arduino](../arduino-uno/arduino) |
 | [micropython/](micropython/) | folder for micropython scripts. Pymakr is configured to sync this folder with the micropython device. |
+| [micropython/light_readings.py](micropython/light_readings.py) | micropython script that reads the light lux values and prints them to the repl. |
 |  |  |
 
 <br />
