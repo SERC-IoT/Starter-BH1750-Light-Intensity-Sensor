@@ -1,9 +1,12 @@
-# Starter Starter
+# BH1750 Light Intensity Sensor
 
-Brief project description and/or information about sensor.
+Code for getting started with a BH1750 light intensity (lux) sensor.
 
-<!-- #TODO add image and description of sensor -->
-![sensor](assets/...)
+![sensor](assets/BH1750.png)
+
+The BH1750 is a digital light intensity sensor. Light levels are converted and output as a 16-bit lux value.
+
+The sensor uses the I2C bus. The default address for the sensor is 0x23, which can be changed to 0x5C by pulling an ADDR pin high.
 
 <br />
 
