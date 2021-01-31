@@ -32,7 +32,7 @@ Setup instructions and starter code for different development boards
 | File/Folder | Description |
 |--- | --- |
 | additional-libraries | Folder contains libraries needed for Arduino sketches. They are included as submodules. Use either `git clone --recursive` or `git submodule init` after cloning. |
-| [docs/bh1750fvi-e-186247.pdf](docs/bh1750fvi-e-186247.pdf) | Data sheet for sensor |
+| [docs/bh1750fvi-e.pdf](docs/bh1750fvi-e.pdf) | Data sheet for sensor |
 |  |  |
 
 <br />
