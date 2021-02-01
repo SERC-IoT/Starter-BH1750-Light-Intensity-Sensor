@@ -1,0 +1,41 @@
+# GitHub action to lint raspberry pi python scripts
+
+name: RPi Python Lint
+
+# Control when action runs
+on:
+  # Trigger workflow when arduino sketch changes
+  push:
+    # branches: [ main ]
+    paths:
+      - 'raspberry-pi/python/**'  
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Workflow job
+jobs:
+  # This workflow contains a single job called "rpi-python-sketch-linting"
+  rpi-python-sketch-linting:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Configure python
+      - name: Set up Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.8
+
+      # Style guide check
+      - name: Style guide check
+        run: |
+          pip install pycodestyle
+          pycodestyle raspberry-pi/python --exclude=bh1750
+
+      # Lint
+      # TODO
