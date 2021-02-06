@@ -31,6 +31,14 @@ jobs:
         with:
           python-version: 3.8
 
+      # Setup stub I2C bus
+      - name: Config I2C
+        run: |
+          sudo apt install -y i2c-tools
+          sudo modprobe i2c-stub chip_addr=0x23
+
+      - run: ls /dev
+
       # Style guide check
       - name: Style guide check
         run: |
