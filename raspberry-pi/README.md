@@ -1,6 +1,6 @@
 # Raspberry Pi and BH1750 Light Intensity Sensor
 
-![RPi Python Checks](https://github.com/markpatterson27/GH-Actions-Testing/workflows/RPi%20Python%20Checks/badge.svg) ![Python code quality](../../blob/badges/.github/badges/rpipycodequality.svg)
+![RPi Python Checks](https://github.com/SERC-IoT/Starter-BH1750-Light-Intensity-Sensor/workflows/RPi%20Python%20Checks/badge.svg) ![Python code quality](../../../blob/badges/.github/badges/rpipycodequality.svg)
 
 Code for getting started with a BH1750 light insensity sensor and a Raspberry Pi.
 
