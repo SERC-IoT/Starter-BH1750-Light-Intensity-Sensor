@@ -1,0 +1,77 @@
+# Check MicroPython scripts
+
+name: MicroPython Checks
+
+on:
+  # Trigger workflow when micropython code changes
+  push:
+    # branches: [ main ]
+    paths:
+      - 'esp8266/micropython/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Workflow job
+jobs:
+  micropython-script-linting:
+    name: MicroPython Script Linting
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      # Configure python version
+      - name: Set up Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.8
+
+      # Install micropython
+      - name: Install micropython
+        run: sudo apt-get install -y micropython
+
+      # import stubs
+      - name: Import stubs
+        uses: actions/checkout@v2
+        with:
+          repository: Josverl/micropython-stubs
+          path: micropython-stubs
+      
+      - name: Import additional stubs
+        uses: actions/checkout@v2
+        with:
+          repository: markpatterson27/micropython-stubs-additional
+          path: micropython-stubs-additional
+
+      - run: echo "$(pwd)"
+      - run: ls -al
+
+      # install dependancies
+      - run: pip install pylint
+
+      # configure python paths
+      - name: Config Python paths
+        run: |
+          SOURCE="$(pwd)/esp8266/micropython"
+          LIB="$(pwd)/esp8266/micropython/lib"
+          CORE="$(pwd)/micropython-stubs/stubs/cpython_core"
+          FROZEN="$(pwd)/micropython-stubs/stubs/micropython-1_13-frozen/esp8266/GENERIC"
+          ADDITIONAL="$(pwd)/micropython-stubs-additional/stubs/esp8266"
+          BASE="$(pwd)/micropython-stubs/stubs/micropython-esp8266-1_11"
+          echo "PYTHONPATH=$PYTHONPATH:$SOURCE:$LIB:$CORE:$FROZEN:$ADDITIONAL" >> $GITHUB_ENV
+          echo "MICROPYPATH=$MICROPYPATH:$SOURCE:$LIB:$CORE:$FROZEN:$ADDITIONAL" >> $GITHUB_ENV
+        # BASE triggers io import error on runner
+
+      # check python paths
+      - run: |
+          echo "check PYTHONPATH env variable"
+          echo $PYTHONPATH
+
+      # lint
+      - name: Lint
+        run: pylint mp-test/micropython/* --disable=C0114
+        continue-on-error: true
+
+      # run script
+      - name: Run MicroPython script
+        run: timeout 10 micropython esp8266/micropython/light_readings.py || ( [[ $? -eq 124 ]] && exit 0 )
