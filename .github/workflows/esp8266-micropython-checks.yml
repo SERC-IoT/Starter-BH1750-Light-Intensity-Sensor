@@ -69,7 +69,7 @@ jobs:
 
       # lint
       - name: Lint
-        run: pylint mp-test/micropython/* --disable=C0114
+        run: pylint esp8266/micropython/* --disable=C0114
         continue-on-error: true
 
       # run script
