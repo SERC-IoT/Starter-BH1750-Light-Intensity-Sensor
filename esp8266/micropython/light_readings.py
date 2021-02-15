@@ -6,6 +6,7 @@ from bh1750 import BH1750
 
 scl = machine.Pin(5)
 sda = machine.Pin(4)
+# for esp32 use machine.I2C(-1, scl=scl, sda=sda, freq=100000)
 i2c = machine.I2C(scl=scl, sda=sda, freq=100000)
 
 sensor = BH1750(i2c, 0x23)  # secondary address is 0x5c
