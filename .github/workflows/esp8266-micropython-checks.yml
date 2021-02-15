@@ -47,7 +47,9 @@ jobs:
       - run: ls -al
 
       # install dependancies
-      - run: pip install pylint
+      - run: |
+          pip install pylint
+          if [ -f esp8266/micropython/requirements.txt ]; then pip install -r esp8266/micropython/requirements.txt; fi
 
       # configure python paths
       - name: Config common Python paths
