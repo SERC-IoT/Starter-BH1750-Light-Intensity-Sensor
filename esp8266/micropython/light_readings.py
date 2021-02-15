@@ -1,7 +1,7 @@
 # micropython script to get lux values from BH1750 sensor
 
-import machine
 import time
+import machine
 from bh1750 import BH1750
 
 scl = machine.Pin(5)
