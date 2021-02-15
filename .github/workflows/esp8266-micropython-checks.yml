@@ -52,8 +52,8 @@ jobs:
       # configure python paths
       - name: Config common Python paths
         run: |
-          SOURCE="$(pwd)/mp-test/micropython"
-          LIB="$(pwd)/mp-test/micropython/lib"
+          SOURCE="$(pwd)/esp8266/micropython"
+          LIB="$(pwd)/esp8266/micropython/lib"
           CORE="$(pwd)/micropython-stubs/stubs/cpython_core"
           echo "COMMONPATH=$SOURCE:$LIB:$CORE" >> $GITHUB_ENV
 
