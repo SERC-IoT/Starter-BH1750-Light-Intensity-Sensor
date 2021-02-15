@@ -37,6 +37,7 @@ class BH1750():
     def __init__(self, bus, addr=0x23):
         self.bus = bus
         self.addr = addr
+        self.mode = None
         self.power_down()
         self.set_sensitivity()
 
