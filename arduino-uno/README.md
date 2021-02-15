@@ -11,7 +11,7 @@ Setup instructions and starter code for using the BH1750 light intensity sensor 
 | File/Folder | Description |
 |--- | --- |
 | [arduino/](arduino/) | Arduino projects folder |
-| [arduino/sketch/sketch.ino](arduino/sketch/sketch.ino) | Simple arduino sketch. |
+| [arduino/bh1750-lux-sensor/bh1750-lux-sensor.ino](arduino/bh1750-lux-sensor/bh1750-lux-sensor.ino) | Simple arduino sketch. |
 | [mkr-wifi-1010-setup.md](mkr-wifi-1010-setup.md) | Setup instructions for using an Arduino MKR WiFi 1010 dev board. |
 |  |  |
 
