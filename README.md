@@ -8,6 +8,13 @@ The BH1750 is a digital ambient light sensor that uses the I2C bus. The IC has a
 
 The default I2C address for the sensor is 0x23. The other address is 0x5C using the address pin.
 
+The BH1750 has six different measurement modes. They are divided in two groups; continuous and one-time measurements. In continuous mode, sensor continuously measures lightness value. In one-time mode the sensor makes only one measurement and then goes into Power Down mode.
+
+Each mode, has three different precisions:
+- Low Resolution Mode - (4 lux precision, 16ms measurement time)
+- High Resolution Mode - (1 lux precision, 120ms measurement time)
+- High Resolution Mode 2 - (0.5 lux precision, 120ms measurement time)
+
 <br />
 
 ## Boards
