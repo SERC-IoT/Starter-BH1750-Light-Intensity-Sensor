@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Module for BH1750 light intensity sensor'''
 #
 # Originally from https://gist.github.com/oskar456/95c66d564c58361ecf9f
 #
@@ -46,31 +47,40 @@ class BH1750():
         self.bus.write_byte(self.addr, self.mode)
 
     def power_down(self):
+        '''turn sensor off'''
         self._set_mode(self.POWER_DOWN)
 
     def power_on(self):
+        '''turn sensor on'''
         self._set_mode(self.POWER_ON)
 
     def reset(self):
+        '''reset sensor'''
         self.power_on() #It has to be powered on before resetting
         self._set_mode(self.RESET)
 
     def cont_low_res(self):
+        '''set continuous low resolution mode'''
         self._set_mode(self.CONTINUOUS_LOW_RES_MODE)
 
     def cont_high_res(self):
+        '''set continuous high resolution mode'''
         self._set_mode(self.CONTINUOUS_HIGH_RES_MODE_1)
 
     def cont_high_res2(self):
+        '''set continuous high 2 resolution mode'''
         self._set_mode(self.CONTINUOUS_HIGH_RES_MODE_2)
 
     def oneshot_low_res(self):
+        '''set oneshot low resolution mode. sensor will turn off after reading.'''
         self._set_mode(self.ONE_TIME_LOW_RES_MODE)
 
     def oneshot_high_res(self):
+        '''set oneshot high resolution mode. sensor will turn off after reading.'''
         self._set_mode(self.ONE_TIME_HIGH_RES_MODE_1)
 
     def oneshot_high_res2(self):
+        '''set oneshot high 2 resolution mode. sensor will turn off after reading.'''
         self._set_mode(self.ONE_TIME_HIGH_RES_MODE_2)
 
     def set_sensitivity(self, sensitivity=69):
@@ -97,11 +107,12 @@ class BH1750():
         return ratio*count
 
     def wait_for_result(self, additional=0):
+        '''calculate and wait for time it takes sensor to take reading.'''
         basetime = 0.018 if (self.mode & 0x03) == 0x03 else 0.128
         time.sleep(basetime * (self.mtreg/69.0) + additional)
 
     def do_measurement(self, mode, additional_delay=0):
-        """ 
+        """
         Perform complete measurement using command
         specified by parameter mode with additional
         delay specified in parameter additional_delay.
@@ -113,12 +124,15 @@ class BH1750():
         return self.get_result()
 
     def measure_low_res(self, additional_delay=0):
+        '''get oneshot low res reading. sensor will turn off after reading.'''
         return self.do_measurement(self.ONE_TIME_LOW_RES_MODE, additional_delay)
 
     def measure_high_res(self, additional_delay=0):
+        '''get oneshot high res reading. sensor will turn off after reading.'''
         return self.do_measurement(self.ONE_TIME_HIGH_RES_MODE_1, additional_delay)
 
     def measure_high_res2(self, additional_delay=0):
+        '''get oneshot high 2 res reading. sensor will turn off after reading.'''
         return self.do_measurement(self.ONE_TIME_HIGH_RES_MODE_2, additional_delay)
 
 if __name__=="__main__":
