@@ -50,27 +50,42 @@ jobs:
       - run: pip install pylint
 
       # configure python paths
-      - name: Config Python paths
+      - name: Config common Python paths
         run: |
-          SOURCE="$(pwd)/esp8266/micropython"
-          LIB="$(pwd)/esp8266/micropython/lib"
+          SOURCE="$(pwd)/mp-test/micropython"
+          LIB="$(pwd)/mp-test/micropython/lib"
           CORE="$(pwd)/micropython-stubs/stubs/cpython_core"
+          echo "COMMONPATH=$SOURCE:$LIB:$CORE" >> $GITHUB_ENV
+
+      - name: Config ESP8266 Python paths
+        run: |
           FROZEN="$(pwd)/micropython-stubs/stubs/micropython-1_13-frozen/esp8266/GENERIC"
           ADDITIONAL="$(pwd)/micropython-stubs-additional/stubs/esp8266"
           BASE="$(pwd)/micropython-stubs/stubs/micropython-esp8266-1_11"
-          echo "PYTHONPATH=$PYTHONPATH:$SOURCE:$LIB:$CORE:$FROZEN:$ADDITIONAL" >> $GITHUB_ENV
-          echo "MICROPYPATH=$MICROPYPATH:$SOURCE:$LIB:$CORE:$FROZEN:$ADDITIONAL" >> $GITHUB_ENV
+          echo "ESP8266PATH=$COMMONPATH:$FROZEN:$ADDITIONAL" >> $GITHUB_ENV
+        # BASE triggers io import error on runner
+
+      - name: Config ESP32 Python paths
+        run: |
+          FROZEN="$(pwd)/micropython-stubs/stubs/micropython-1_13-frozen/esp32/GENERIC"
+          ADDITIONAL="$(pwd)/micropython-stubs-additional/stubs/esp32"
+          BASE="$(pwd)/micropython-stubs/stubs/micropython-esp32-1_13-103"
+          echo "ESP32PATH=$COMMONPATH:$FROZEN:$ADDITIONAL:$BASE" >> $GITHUB_ENV
         # BASE triggers io import error on runner
 
       # check python paths
       - run: |
           echo "check PYTHONPATH env variable"
           echo $PYTHONPATH
+        env:
+          PYTHONPATH: ${{ env.ESP8266PATH }}
 
       # lint
-      - name: Lint
+      - name: Lint ESP8266
         run: pylint esp8266/micropython/* --disable=C0114
         continue-on-error: true
+        env:
+          PYTHONPATH: ${{ env.ESP8266PATH }}
 
       - name: Parse lint
         id: lintparsing
@@ -78,10 +93,25 @@ jobs:
         run: |
           lintscore=$(pylint esp8266/micropython/* | tail -n 2 | head -n 1 | cut -d' ' -f7)
           echo "::set-output name=lintscore::$lintscore"
+        env:
+          PYTHONPATH: ${{ env.ESP8266PATH }}
+
+      - name: Lint ESP32
+        run: pylint esp8266/micropython/* --disable=C0114
+        continue-on-error: true
+        env:
+          PYTHONPATH: ${{ env.ESP32PATH }}
 
       # run script
-      - name: Run MicroPython script
+      - name: Run ESP8266 MicroPython script
         run: timeout 10 micropython esp8266/micropython/light_readings.py || ( [[ $? -eq 124 ]] && exit 0 )
+        env:
+          MICROPYPATH: ${{ env.ESP8266PATH }}
+
+      - name: Run ESP32 MicroPython script
+        run: timeout 10 micropython esp8266/micropython/light_readings.py || ( [[ $? -eq 124 ]] && exit 0 )
+        env:
+          MICROPYPATH: ${{ env.ESP32PATH }}
 
     outputs:
       lint-score: ${{ steps.lintparsing.outputs.lintscore }}
