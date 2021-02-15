@@ -1,6 +1,6 @@
 # GitHub action to test arduino sketch compiles
 
-name: Arduino Sketch Compiles
+name: Arduino Sketch Checks
 
 # Controls when the action will run. 
 on:
@@ -24,6 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        # TODO: include submodules
 
       # install arduino cli
       - name: Install arduino-cli
@@ -44,6 +45,4 @@ jobs:
 
       # compile sketch
       - name: Compile sketch
-        run: ./bin/arduino-cli compile --fqbn arduino:avr:uno arduino-uno/arduino/ #add sketch folder to path
-
-  
+        run: ./bin/arduino-cli compile --fqbn arduino:avr:uno arduino-uno/arduino/ # todo: add sketch folder to path

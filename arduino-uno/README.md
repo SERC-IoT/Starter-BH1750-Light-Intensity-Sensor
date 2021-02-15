@@ -1,6 +1,6 @@
 # Arduino Uno and BH1750 Light Intensity Sensor
 
-![Arduino Sketch Compiles](https://github.com/SERC-IoT/Starter-BH1750-Light-Intensity-Sensor/workflows/Arduino%20Sketch%20Compiles/badge.svg)
+![Arduino Sketch Checks](https://github.com/SERC-IoT/Starter-BH1750-Light-Intensity-Sensor/workflows/Arduino%20Sketch%20Checks/badge.svg)
 
 Setup instructions and starter code for using the BH1750 light intensity sensor and an Arduino development board.
 
