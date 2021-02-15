@@ -70,8 +70,8 @@ jobs:
           FROZEN="$(pwd)/micropython-stubs/stubs/micropython-1_13-frozen/esp32/GENERIC"
           ADDITIONAL="$(pwd)/micropython-stubs-additional/stubs/esp32"
           BASE="$(pwd)/micropython-stubs/stubs/micropython-esp32-1_13-103"
-          echo "ESP32PATH=$COMMONPATH:$FROZEN:$ADDITIONAL:$BASE" >> $GITHUB_ENV
-        # BASE triggers io import error on runner
+          echo "ESP32PATH=$COMMONPATH:$FROZEN:$ADDITIONAL" >> $GITHUB_ENV
+        # BASE triggers io import error or randint param error on runner
 
       # check python paths
       - run: |
