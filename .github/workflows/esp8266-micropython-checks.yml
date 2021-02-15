@@ -72,6 +72,59 @@ jobs:
         run: pylint esp8266/micropython/* --disable=C0114
         continue-on-error: true
 
+      - name: Parse lint
+        id: lintparsing
+        continue-on-error: true
+        run: |
+          lintscore=$(pylint esp8266/micropython/* | tail -n 2 | head -n 1 | cut -d' ' -f7)
+          echo "::set-output name=lintscore::$lintscore"
+
       # run script
       - name: Run MicroPython script
         run: timeout 10 micropython esp8266/micropython/light_readings.py || ( [[ $? -eq 124 ]] && exit 0 )
+
+    outputs:
+      lint-score: ${{ steps.lintparsing.outputs.lintscore }}
+
+# job to build custom status badges
+  build-badges:
+    name: Build Badges
+    runs-on: ubuntu-latest
+    if: always()
+    needs: micropython-script-linting
+    steps:
+      # need to checkout whole repo
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # switch to badges branch
+      - run: git checkout badges || git checkout -b badges
+
+      # make dir for badges
+      - name: make badges dir
+        run: mkdir -p .github/badges
+
+      # make points badge
+      - name: make points badge
+        uses: emibcn/badge-action@v1
+        with:
+          LABEL: 'Pylint Score'
+          STATUS: ${{ needs.micropython-script-linting.outputs.lint-score }}
+          COLOR: purple
+          path: '.github/badges/micropythonpylint.svg'
+
+      # commit and push badge if score has changed
+      - name: Commit badge
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add '.github/badges'
+          git commit -m "Add/Update micropython badge"
+        continue-on-error: true
+      - name: Push badge commit
+        uses: ad-m/github-push-action@master
+        if: ${{ success() }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: badges

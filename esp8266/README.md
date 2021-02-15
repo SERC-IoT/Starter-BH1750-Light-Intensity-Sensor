@@ -1,6 +1,6 @@
 # ESP8266 and BH1750 Light Intensity Sensor
 
-![MicroPython Checks](https://github.com/SERC-IoT/Starter-BH1750-Light-Intensity-Sensor/workflows/MicroPython%20Checks/badge.svg)
+![MicroPython Checks](https://github.com/SERC-IoT/Starter-BH1750-Light-Intensity-Sensor/workflows/MicroPython%20Checks/badge.svg) ![Pylint score](../../../blob/badges/.github/badges/micropythonpylint.svg)
 
 Code for getting started with a BH1750 light insensity sensor and a ESP8266 microcontroller.
 
