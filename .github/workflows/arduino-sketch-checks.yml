@@ -25,7 +25,7 @@ jobs:
         uses: arduino/arduino-lint-action@v1
         with:
           project-type: sketch
-          path: arduino-uno/arduino/*
+          path: arduino-uno/arduino/
           recursive: true
           verbose: true
   
