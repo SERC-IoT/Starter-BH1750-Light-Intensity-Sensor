@@ -1,4 +1,4 @@
 {
-    "sketch": "arduino\\sketch\\sketch.ino",
+    "sketch": "arduino-uno\\arduino\\bh1750-lux-sensor\\bh1750-lux-sensor.ino",
     "board": "arduino:avr:uno"
 }
