@@ -1,9 +1,8 @@
-# Arduino Uno and -- -- Sensor
+# Arduino Uno and BH1750 Light Intensity Sensor
 
-![Arduino Sketch Compiles](https://github.com/SERC-IoT/Starter-Start/workflows/Arduino%20Sketch%20Compiles/badge.svg)
+![Arduino Sketch Compiles](https://github.com/SERC-IoT/Starter-BH1750-Light-Intensity-Sensor/workflows/Arduino%20Sketch%20Compiles/badge.svg)
 
-<!-- #TODO add sensor and circuit diagrams -->
-Setup instructions and starter code for using the -- -- sensor and an Arduino development board.
+Setup instructions and starter code for using the BH1750 light intensity sensor and an Arduino development board.
 
 <br />
 
@@ -25,17 +24,16 @@ Setup instructions for an Arduino Uno board is below. For MKR WiFi 1010 based se
 ## Circuit Diagram
 Wire the components as shown in the diagram.
 
-![circuit diagram](assets/...)
+![circuit diagram](assets/uno-bh1750-sensor-circuit-diagram_schem.svg)
 
 #### Components Needed
-* 
+* BH1750 sensor breakout board
 * connecting wires
 * arduino uno development board
 
-
 <br />
 
-![breadboard diagram](assets/...)
+![breadboard diagram](assets/uno-bh1750-sensor-circuit-diagram_bb.png)
 
 <br />
 
@@ -45,6 +43,8 @@ Wire the components as shown in the diagram.
 | --- | --- | --- |
 | 5V | +5V | Vdd |
 | GND | GND | GND |
+| 18 | SDA |  | SDA |
+| 19 | SCL |  | SCL |
 |  |  |  |
 
 ![pin diagram](assets/Pinout-UNOrev3_latest.png)
