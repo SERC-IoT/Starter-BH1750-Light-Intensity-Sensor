@@ -55,9 +55,9 @@ Wire the components as shown in the diagram.
 
 The sketch will work with many different types and chipset of board. To use an Arduino Uno, make sure to select the correct board in Boards Manager.
 
-<!-- #TODO add library info -->
-The arduino sketches require the -- -- libraries. They are included in the root additional-libraries folder. Afternatively, they can be downloaded through the Arduino libraries manager or from -- --
+The arduino sketches require the BH1750 library. It is included in the root additional-libraries folder. Afternatively, it can be downloaded through the Arduino libraries manager or from https://github.com/claws/BH1750.
 
 ## References
 
-* https://www.arduino.cc/en/reference/board
+- https://www.arduino.cc/en/reference/board
+- https://github.com/claws/BH1750

@@ -1,6 +1,5 @@
 # Setup for MKR WiFi 1010 dev board
 
-<!-- #TODO add library info -->
 Setup instructions for an Arduino MKR WiFi 1010 development board.
 
 ## Circuit Diagram
@@ -38,4 +37,4 @@ Wire the components as shown in the diagram.
 
 Drivers and board details need to be installed to use the Arduino MKR series. Follow the instructions here: https://www.arduino.cc/en/Guide/MKRWiFi1010#toc2
 
-The arduino sketch requires the .. libraries. They are included in the libraries folder.
+The arduino sketches require the BH1750 library. It is included in the root additional-libraries folder. Afternatively, it can be downloaded through the Arduino libraries manager or from https://github.com/claws/BH1750.
