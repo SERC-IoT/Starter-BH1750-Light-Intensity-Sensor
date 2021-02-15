@@ -1,6 +1,6 @@
 #!/usr/bin/python
-import smbus
 import time
+import smbus
 
 # Define some constants from the datasheet
 
@@ -27,17 +27,18 @@ bus = smbus.SMBus(1)   # Rev 2 Pi uses 1
 
 
 def convert_to_number(data):
-    # Simple function to convert 2 bytes of data into a decimal number.
-    return (data[1] + (256 * data[0]))
+    '''Simple function to convert 2 bytes of data into a decimal number.'''
+    return data[1] + (256 * data[0])
 
 
 def read_light(addr=DEVICE):
-    # Read data from I2C interface
+    '''Read data from I2C interface'''
     data = bus.read_i2c_block_data(addr, ONE_TIME_HIGH_RES_MODE_1)
-    return (convert_to_number(data) / 1.2)  # for mode 2 need to divide again by 2
+    return convert_to_number(data) / 1.2  # for mode 2 need to divide again by 2
 
 
 def main():
+    '''run to loop reading'''
     while True:
         print("Light Level : {:.2f} lx    ".format(read_light(0x5C)), end='\r')
         time.sleep(0.5)
