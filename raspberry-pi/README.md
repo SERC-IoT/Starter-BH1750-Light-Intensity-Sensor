@@ -1,6 +1,6 @@
 # Raspberry Pi and BH1750 Light Intensity Sensor
 
-![RPi Python Checks](../../../workflows/RPi%20Python%20Checks/badge.svg) ![Python code quality](../../../blob/badges/.github/badges/rpipycodequality.svg)
+![RPi Python Checks](../../../workflows/RPi%20Python%20Checks/badge.svg) ![Python lint score](../../../blob/badges/.github/badges/rpipylint.svg)
 
 Code for getting started with a BH1750 light insensity sensor and a Raspberry Pi.
 

@@ -92,10 +92,10 @@ jobs:
       - name: make points badge
         uses: emibcn/badge-action@v1
         with:
-          LABEL: 'Python Code Quality'
+          LABEL: 'Pylint Score'
           STATUS: ${{ needs.rpi-python-script-linting.outputs.lint-score }}
           COLOR: purple
-          path: '.github/badges/rpipycodequality.svg'
+          path: '.github/badges/rpipylint.svg'
 
       # commit and push badge if score has changed
       - name: Commit badge
