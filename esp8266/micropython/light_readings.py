@@ -8,7 +8,7 @@ scl = machine.Pin(5)
 sda = machine.Pin(4)
 i2c = machine.I2C(scl=scl, sda=sda, freq=100000)
 
-sensor = BH1750(i2c, 0x5c)
+sensor = BH1750(i2c, 0x23)  # secondary address is 0x5c
 
 try:
     while True:
