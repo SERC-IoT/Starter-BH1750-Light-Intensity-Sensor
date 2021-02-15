@@ -1,5 +1,6 @@
 /*
- * Sketch that reads light intensity (lux) from a BH1750 sensor, and prints the reading to the serial console.
+ * Sketch that reads light intensity (lux) from a BH1750 sensor, and prints the
+ * reading to the serial console.
  */
 
 // include the libraries we need
@@ -9,24 +10,24 @@
 // create sensor object
 // primary address is 0x23. alternative address is 0x5C.
 BH1750 lightMeter(0x23);
- 
+
 void setup() {
   Serial.begin(9600);
 
   // Initialize the I2C bus (BH1750 library doesn't do this automatically)
-  // For esp8266 or esp32 can specify I2C pins as such: Wire.begin(SCL pin, SDA pin);
+  // For esp8266 or esp32 can specify I2C pins as such:
+  //   Wire.begin(SCL pin, SDA pin);
   Wire.begin();
 
   // wait until serial port opens
-  while (! Serial) {
+  while (!Serial) {
     delay(1);
   }
 
   // check sensor starts correctly
   if (lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE)) {
     Serial.println(F("BH1750 Sensor Readings"));
-  }
-  else {
+  } else {
     Serial.println(F("Error initialising BH1750"));
   }
 }
