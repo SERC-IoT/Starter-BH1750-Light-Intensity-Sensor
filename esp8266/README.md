@@ -74,7 +74,8 @@ The MicroPython script uses a module from https://github.com/PinkInk/upylib/tree
 Test files can be uploaded using [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/install-ampy).
 
 ```pwsh
-PS> ampy --port <COM port of device> --baud 115200 put micropython/main.py
+PS> ampy --port <COM port of device> --baud 115200 put micropython/light_readings.py
+PS> ampy --port <COM port of device> --baud 115200 put micropython/lib
 ```
 
 A PowerShell script ([esp8266-micropython-setup.ps1](esp8266-micropython-setup.ps1)) is also included to automatically setup MicroPython on an ESP8266 device.
