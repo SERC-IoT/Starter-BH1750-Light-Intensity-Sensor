@@ -37,7 +37,7 @@ jobs:
     # test several different boards
     strategy:
       matrix:
-        arduino-platform: ["arduino:avr", "arduino:samd", "esp8266:esp8266", "esp32:esp32"]
+        arduino-platform: ["arduino:avr", "arduino:samd", "arduino:mbed", "esp8266:esp8266", "esp32:esp32"]
         # In addition to the platform we also need to define the FQBN of the
         # boards we want to test for each platform.
         include:
@@ -48,6 +48,10 @@ jobs:
           # arduino mkr wifi 1010
           - arduino-platform: "arduino:samd"
             fqbn: "arduino:samd:mkrwifi1010"
+            additional-urls-arg: ""
+          # arduino mkr wifi 1010
+          - arduino-platform: "arduino:mbed"
+            fqbn: "arduino:mbed:nano33ble"
             additional-urls-arg: ""
           # wemos d1 mini
           - arduino-platform: "esp8266:esp8266"
