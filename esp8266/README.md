@@ -69,6 +69,20 @@ The arduino sketches require the BH1750 library. It is included in the root addi
 
 The MicroPython script uses a module from https://github.com/PinkInk/upylib/tree/master/bh1750. It is included in the [micropython/lib](micropython/lib) folder.
 
+### Uploading Files
+
+Test files can be uploaded using [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/install-ampy).
+
+```pwsh
+PS> ampy --port <COM port of device> --baud 115200 put micropython/main.py
+```
+
+A PowerShell script ([esp8266-micropython-setup.ps1](esp8266-micropython-setup.ps1)) is also included to automatically setup MicroPython on an ESP8266 device.
+
+```pwsh
+PS> .\esp8266-micropython-setup.ps1
+```
+
 <br />
 
 ## References
